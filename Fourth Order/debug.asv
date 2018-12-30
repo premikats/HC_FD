@@ -1,0 +1,8 @@
+clear all
+clc
+
+n = 1;
+delta_zeta = 1;
+N = 10;
+
+deriv_2 = Deriv_n_mat_Four(n,delta_zeta,N);
