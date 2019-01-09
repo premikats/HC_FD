@@ -1,16 +1,13 @@
-function [A] = coef_mat_int_Eight(delta_zeta)
+function [A] = coef_mat_int_Eight()
 %coef_mat_bound1 Gives the coefficient matrix of the interior node
 
 %%
-% Inputs:
-% delta_zeta = uniform grid spacing
-
 % Output:
 % A = coefficient matrix
 
 %%
 % written by Premika T.S. and Saarthak Gupta
-% last edited - 27/12/2018
+% last edited - 09/01/2019
 
 %% Matrix Formation:
 
@@ -18,7 +15,7 @@ A = zeros(9,9);
 
 for i=5:9
     for j=1:9
-        A(j,i) = (delta_zeta^(i-5))*(((i-5)^(j-1))/factorial(j-1));
+        A(j,i) = (1^(i-5))*(((i-5)^(j-1))/factorial(j-1));
     end
 end
 

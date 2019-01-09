@@ -1,28 +1,25 @@
-function [A] = coef_mat_bound4_Eight(delta_zeta)
-%coef_mat_bound1 Gives the coefficient matrix of the fourth boundary node
+function [A] = coef_mat_int_Six()
+%coef_mat_int Gives the coefficient matrix of the interior nodes
 
 %%
-% Inputs:
-% delta_zeta = uniform grid spacing
-
 % Output:
 % A = coefficient matrix
 
 %%
 % written by Premika T.S. and Saarthak Gupta
-% last edited - 27/12/2018
+% last edited - 09/01/2019
 
 %% Matrix Formation:
 
-A = zeros(9,9);
+A = zeros(7,7);
 
-for i=4:9
-    for j=1:9
-        A(j,i) = (delta_zeta^(i-4))*(((i-4)^(j-1))/factorial(j-1));
+for i=4:7
+    for j=1:7
+        A(j,i) = (1^(i-4))*(((i-4)^(j-1))/factorial(j-1));
     end
 end
 
-for k=1:9
+for k=1:7
     if mod(k,2)==0
         A(k,1) = -A(k,7);
         A(k,2) = -A(k,6);
